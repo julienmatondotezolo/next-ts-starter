@@ -13,13 +13,15 @@ export const metadata: Metadata = {
   description: "Adaptive Point of sale system working on multiple devices",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+
   return (
     <html suppressHydrationWarning={true} lang={locale}>
       <body className={`${dmSans.className}`}>
