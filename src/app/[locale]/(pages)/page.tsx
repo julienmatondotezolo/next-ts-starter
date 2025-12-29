@@ -7,7 +7,7 @@ import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export default function Index() {
-  const indexPageText = useTranslations("Index");
+  const t = useTranslations("Index");
 
   return (
     <main className="relative min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
@@ -19,8 +19,8 @@ export default function Index() {
               <span className="text-xl font-bold text-primary-foreground">A</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold tracking-tight">{indexPageText("welcome")}</h1>
-              <p className="text-xs text-muted-foreground">Modern Design System</p>
+              <h1 className="text-xl font-bold tracking-tight">{t("welcome")}</h1>
+              <p className="text-xs text-muted-foreground">{t("subtitle")}</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -35,27 +35,26 @@ export default function Index() {
         {/* Hero section */}
         <section className="space-y-4">
           <div className="inline-block rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-1.5 text-sm font-semibold text-white shadow-lg">
-            ✨ Modern Components
+            ✨ {t("badge")}
           </div>
           <h2 className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl">
-            Beautiful UI Components
+            {t("hero.title")}
           </h2>
           <p className="max-w-2xl text-lg text-muted-foreground">
-            Explore our modern button variants, theme toggle, and language switcher components built with the
-            latest design trends.
+            {t("hero.description")}
           </p>
         </section>
 
         {/* Color Palette Section */}
         <section className="space-y-6 rounded-2xl border border-border/40 bg-card/50 p-8 shadow-xl backdrop-blur-sm">
           <div className="space-y-2">
-            <h3 className="text-2xl font-bold">Color Palette</h3>
-            <p className="text-sm text-muted-foreground">Vibrant colors for modern interfaces</p>
+            <h3 className="text-2xl font-bold">{t("colorPalette.title")}</h3>
+            <p className="text-sm text-muted-foreground">{t("colorPalette.description")}</p>
           </div>
 
           {/* Primary Colors */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">Primary</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">{t("colorPalette.primary")}</h4>
             <div className="flex flex-wrap gap-3">
               <div className="h-16 w-16 rounded-2xl bg-blue-600 shadow-lg transition-transform hover:scale-110" />
               <div className="h-16 w-16 rounded-2xl bg-blue-500 shadow-lg transition-transform hover:scale-110" />
@@ -67,7 +66,7 @@ export default function Index() {
 
           {/* Emerald */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">Emerald</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">{t("colorPalette.emerald")}</h4>
             <div className="flex flex-wrap gap-3">
               <div className="h-16 w-16 rounded-2xl bg-emerald-600 shadow-lg transition-transform hover:scale-110" />
               <div className="h-16 w-16 rounded-2xl bg-emerald-500 shadow-lg transition-transform hover:scale-110" />
@@ -80,7 +79,7 @@ export default function Index() {
           <div className="grid gap-4 sm:grid-cols-3">
             {/* Orange */}
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">Orange</h4>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">{t("colorPalette.orange")}</h4>
               <div className="flex flex-wrap gap-2">
                 <div className="h-12 w-12 rounded-xl bg-orange-600 shadow-md transition-transform hover:scale-110" />
                 <div className="h-12 w-12 rounded-xl bg-orange-500 shadow-md transition-transform hover:scale-110" />
@@ -92,7 +91,7 @@ export default function Index() {
 
             {/* Yellow */}
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">Yellow</h4>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">{t("colorPalette.yellow")}</h4>
               <div className="flex flex-wrap gap-2">
                 <div className="h-12 w-12 rounded-xl bg-yellow-600 shadow-md transition-transform hover:scale-110" />
                 <div className="h-12 w-12 rounded-xl bg-yellow-500 shadow-md transition-transform hover:scale-110" />
@@ -104,7 +103,7 @@ export default function Index() {
 
             {/* Red */}
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">Red</h4>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">{t("colorPalette.red")}</h4>
               <div className="flex flex-wrap gap-2">
                 <div className="h-12 w-12 rounded-xl bg-red-600 shadow-md transition-transform hover:scale-110" />
                 <div className="h-12 w-12 rounded-xl bg-red-500 shadow-md transition-transform hover:scale-110" />
@@ -117,7 +116,7 @@ export default function Index() {
 
           {/* Secondary Colors */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">Secondary</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">{t("colorPalette.secondary")}</h4>
             <div className="flex flex-wrap gap-3">
               <div className="h-16 w-16 rounded-2xl bg-blue-600 shadow-lg transition-transform hover:scale-110" />
               <div className="h-16 w-16 rounded-2xl bg-purple-600 shadow-lg transition-transform hover:scale-110" />
@@ -131,64 +130,64 @@ export default function Index() {
         {/* Button Variants Section */}
         <section className="space-y-6 rounded-2xl border border-border/40 bg-card/50 p-8 shadow-xl backdrop-blur-sm">
           <div className="space-y-2">
-            <h3 className="text-2xl font-bold">Button Variants</h3>
-            <p className="text-sm text-muted-foreground">Different button styles for various use cases</p>
+            <h3 className="text-2xl font-bold">{t("buttons.title")}</h3>
+            <p className="text-sm text-muted-foreground">{t("buttons.description")}</p>
           </div>
 
           {/* Large Buttons */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">Large</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">{t("buttons.large")}</h4>
             <div className="flex flex-wrap gap-3">
               <button className="rounded-xl bg-blue-600 px-8 py-3 font-semibold text-white shadow-lg transition-all hover:scale-105 hover:bg-blue-700 hover:shadow-xl">
-                Large Button
+                {t("buttons.largeButton")}
               </button>
               <button className="rounded-xl bg-blue-600 px-8 py-3 font-semibold text-white shadow-lg transition-all hover:scale-105 hover:bg-blue-700 hover:shadow-xl">
-                Large Button
+                {t("buttons.largeButton")}
               </button>
             </div>
           </div>
 
           {/* Medium Buttons */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">Medium</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">{t("buttons.medium")}</h4>
             <div className="flex flex-wrap gap-3">
               <button className="rounded-lg bg-blue-600 px-6 py-2.5 font-semibold text-white shadow-md transition-all hover:scale-105 hover:bg-blue-700 hover:shadow-lg">
-                Medium Button
+                {t("buttons.mediumButton")}
               </button>
               <button className="rounded-lg bg-blue-600 px-6 py-2.5 font-semibold text-white shadow-md transition-all hover:scale-105 hover:bg-blue-700 hover:shadow-lg">
-                Medium Button
+                {t("buttons.mediumButton")}
               </button>
             </div>
           </div>
 
           {/* Small Buttons */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">Small</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">{t("buttons.small")}</h4>
             <div className="flex flex-wrap gap-3">
               <button className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-md transition-all hover:scale-105 hover:bg-blue-700">
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                Small Button
+                {t("buttons.smallButton")}
               </button>
               <button className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-md transition-all hover:scale-105 hover:bg-blue-700">
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                Small Button
+                {t("buttons.smallButton")}
               </button>
             </div>
           </div>
 
           {/* Tiny Buttons */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">Tiny</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">{t("buttons.tiny")}</h4>
             <div className="flex flex-wrap gap-2">
               <button className="rounded-md bg-blue-600 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow transition-all hover:scale-105 hover:bg-blue-700">
-                Tiny Button
+                {t("buttons.tinyButton")}
               </button>
               <button className="rounded-md bg-blue-600 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow transition-all hover:scale-105 hover:bg-blue-700">
-                Tiny Button
+                {t("buttons.tinyButton")}
               </button>
             </div>
           </div>
@@ -197,45 +196,45 @@ export default function Index() {
         {/* Tags Section */}
         <section className="space-y-6 rounded-2xl border border-border/40 bg-card/50 p-8 shadow-xl backdrop-blur-sm">
           <div className="space-y-2">
-            <h3 className="text-2xl font-bold">Tags</h3>
-            <p className="text-sm text-muted-foreground">Colorful status indicators and labels</p>
+            <h3 className="text-2xl font-bold">{t("tags.title")}</h3>
+            <p className="text-sm text-muted-foreground">{t("tags.description")}</p>
           </div>
 
           <div className="space-y-4">
             <div className="flex flex-wrap gap-2">
               <span className="rounded-lg bg-slate-100 px-3 py-1.5 text-sm font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
-                Hot Desk
+                {t("tags.hotDesk")}
               </span>
               <span className="rounded-lg bg-slate-100 px-3 py-1.5 text-sm font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
-                Wi-fi
+                {t("tags.wifi")}
               </span>
               <span className="rounded-lg bg-orange-100 px-3 py-1.5 text-sm font-semibold text-orange-700 dark:bg-orange-900/30 dark:text-orange-400">
-                Pending
+                {t("tags.pending")}
               </span>
               <span className="rounded-lg bg-emerald-100 px-3 py-1.5 text-sm font-semibold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
-                Confirmed
+                {t("tags.confirmed")}
               </span>
               <span className="rounded-lg bg-red-100 px-3 py-1.5 text-sm font-semibold text-red-700 dark:bg-red-900/30 dark:text-red-400">
-                Alert
+                {t("tags.alert")}
               </span>
             </div>
 
             <div className="flex flex-wrap gap-2">
               <span className="rounded-full bg-emerald-500 px-3 py-1 text-xs font-bold text-white shadow-md">
-                Active
+                {t("tags.active")}
               </span>
               <span className="rounded-full bg-red-500 px-3 py-1 text-xs font-bold text-white shadow-md">
-                Closed
+                {t("tags.closed")}
               </span>
               <span className="rounded-full bg-yellow-500 px-3 py-1 text-xs font-bold text-yellow-900 shadow-md">
-                ⏳ Waiting
+                ⏳ {t("tags.waiting")}
               </span>
             </div>
           </div>
 
           {/* Status with icons */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">Status Badges</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">{t("tags.statusBadges")}</h4>
             <div className="flex flex-wrap gap-2">
               <span className="flex items-center gap-1.5 rounded-lg bg-emerald-100 px-3 py-1.5 text-sm font-semibold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
@@ -245,7 +244,7 @@ export default function Index() {
                     clipRule="evenodd"
                   />
                 </svg>
-                Replied
+                {t("tags.replied")}
               </span>
               <span className="flex items-center gap-1.5 rounded-lg bg-orange-100 px-3 py-1.5 text-sm font-semibold text-orange-700 dark:bg-orange-900/30 dark:text-orange-400">
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
@@ -255,7 +254,7 @@ export default function Index() {
                     clipRule="evenodd"
                   />
                 </svg>
-                Open
+                {t("tags.open")}
               </span>
               <span className="flex items-center gap-1.5 rounded-lg bg-red-100 px-3 py-1.5 text-sm font-semibold text-red-700 dark:bg-red-900/30 dark:text-red-400">
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
@@ -265,7 +264,7 @@ export default function Index() {
                     clipRule="evenodd"
                   />
                 </svg>
-                Closed
+                {t("tags.closed")}
               </span>
             </div>
           </div>
@@ -276,9 +275,9 @@ export default function Index() {
           {/* Theme Toggle Card */}
           <div className="space-y-4 rounded-2xl border border-border/40 bg-card/50 p-8 shadow-xl backdrop-blur-sm">
             <div className="space-y-2">
-              <h3 className="text-2xl font-bold">Theme Toggle</h3>
+              <h3 className="text-2xl font-bold">{t("themeToggle.title")}</h3>
               <p className="text-sm text-muted-foreground">
-                Switch between light and dark modes with a smooth animated toggle
+                {t("themeToggle.description")}
               </p>
             </div>
             <div className="flex items-center justify-center py-8">
@@ -286,7 +285,7 @@ export default function Index() {
             </div>
             <div className="rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 p-4 dark:from-blue-950/30 dark:to-purple-950/30">
               <p className="text-xs text-muted-foreground">
-                ✨ Features: Hover effects, rotation animation, gradient backgrounds, and smooth transitions
+                ✨ {t("themeToggle.features")}
               </p>
             </div>
           </div>
@@ -294,9 +293,9 @@ export default function Index() {
           {/* Language Switcher Card */}
           <div className="space-y-4 rounded-2xl border border-border/40 bg-card/50 p-8 shadow-xl backdrop-blur-sm">
             <div className="space-y-2">
-              <h3 className="text-2xl font-bold">Language Switcher</h3>
+              <h3 className="text-2xl font-bold">{t("languageSwitcher.title")}</h3>
               <p className="text-sm text-muted-foreground">
-                Modern dropdown with flag icons and smooth animations
+                {t("languageSwitcher.description")}
               </p>
             </div>
             <div className="flex items-center justify-center py-8">
@@ -304,7 +303,7 @@ export default function Index() {
             </div>
             <div className="rounded-lg bg-gradient-to-r from-emerald-50 to-cyan-50 p-4 dark:from-emerald-950/30 dark:to-cyan-950/30">
               <p className="text-xs text-muted-foreground">
-                ✨ Features: Globe icon, flag emojis, active indicators, loading states, and backdrop blur
+                ✨ {t("languageSwitcher.features")}
               </p>
             </div>
           </div>
@@ -323,9 +322,9 @@ export default function Index() {
                 <path d="M15.98 1.804a1 1 0 00-1.96 0l-.24 1.192a1 1 0 01-.784.785l-1.192.238a1 1 0 000 1.962l1.192.238a1 1 0 01.785.785l.238 1.192a1 1 0 001.962 0l.238-1.192a1 1 0 01.785-.785l1.192-.238a1 1 0 000-1.962l-1.192-.238a1 1 0 01-.785-.785l-.238-1.192zM6.949 5.684a1 1 0 00-1.898 0l-.683 2.051a1 1 0 01-.633.633l-2.051.683a1 1 0 000 1.898l2.051.684a1 1 0 01.633.632l.683 2.051a1 1 0 001.898 0l.683-2.051a1 1 0 01.633-.633l2.051-.683a1 1 0 000-1.898l-2.051-.683a1 1 0 01-.633-.633L6.95 5.684zM13.949 13.684a1 1 0 00-1.898 0l-.184.551a1 1 0 01-.632.633l-.551.183a1 1 0 000 1.898l.551.183a1 1 0 01.633.633l.183.551a1 1 0 001.898 0l.184-.551a1 1 0 01.632-.633l.551-.183a1 1 0 000-1.898l-.551-.184a1 1 0 01-.633-.632l-.183-.551z" />
               </svg>
             </div>
-            <h4 className="font-bold text-blue-900 dark:text-blue-100">Modern Animations</h4>
+            <h4 className="font-bold text-blue-900 dark:text-blue-100">{t("features.animations.title")}</h4>
             <p className="text-sm text-blue-700 dark:text-blue-300">
-              Smooth transitions and hover effects for delightful interactions
+              {t("features.animations.description")}
             </p>
           </div>
 
@@ -344,9 +343,9 @@ export default function Index() {
                 />
               </svg>
             </div>
-            <h4 className="font-bold text-purple-900 dark:text-purple-100">Clean Code</h4>
+            <h4 className="font-bold text-purple-900 dark:text-purple-100">{t("features.cleanCode.title")}</h4>
             <p className="text-sm text-purple-700 dark:text-purple-300">
-              Well-structured, maintainable components with TypeScript
+              {t("features.cleanCode.description")}
             </p>
           </div>
 
@@ -361,9 +360,9 @@ export default function Index() {
                 <path d="M15.5 2A1.5 1.5 0 0014 3.5v13a1.5 1.5 0 001.5 1.5h1a1.5 1.5 0 001.5-1.5v-13A1.5 1.5 0 0016.5 2h-1zM9.5 6A1.5 1.5 0 008 7.5v9A1.5 1.5 0 009.5 18h1a1.5 1.5 0 001.5-1.5v-9A1.5 1.5 0 0010.5 6h-1zM3.5 10A1.5 1.5 0 002 11.5v5A1.5 1.5 0 003.5 18h1A1.5 1.5 0 006 16.5v-5A1.5 1.5 0 004.5 10h-1z" />
               </svg>
             </div>
-            <h4 className="font-bold text-pink-900 dark:text-pink-100">Responsive Design</h4>
+            <h4 className="font-bold text-pink-900 dark:text-pink-100">{t("features.responsive.title")}</h4>
             <p className="text-sm text-pink-700 dark:text-pink-300">
-              Works perfectly on all screen sizes and devices
+              {t("features.responsive.description")}
             </p>
           </div>
         </section>
