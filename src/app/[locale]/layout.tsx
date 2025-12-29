@@ -9,8 +9,8 @@ import Providers from "./providers";
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ADA - Point of sale",
-  description: "Adaptive Point of sale system working on multiple devices",
+  title: "next-ts-starter template",
+  description: "Next.js typescript template with tailwind darkmode and localization",
 };
 
 export default async function RootLayout({
